@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/kevin/development/space-invader/./include -I/home/kevin/development/space-invader/./src 
+CXX_INCLUDES = -I/home/kevin/development/space-invader/include -I/home/kevin/development/space-invader/src 
 

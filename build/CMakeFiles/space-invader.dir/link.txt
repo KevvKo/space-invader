@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/space-invader.dir/main.cpp.o CMakeFiles/space-invader.dir/src/game.cpp.o  -o space-invader 
+/usr/bin/c++     CMakeFiles/space-invader.dir/main.cpp.o CMakeFiles/space-invader.dir/src/game.cpp.o  -o space-invader  -lSDL2 

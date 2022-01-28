@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../src/game.h
-SDL2/SDL.h
--
-
-/home/kevin/development/space-invader/main.cpp
+/home/kevin/development/space-invader/src/game.cpp
 iostream
 -
 game.h
-/home/kevin/development/space-invader/game.h
+/home/kevin/development/space-invader/src/game.h
+SDL2/SDL.h
+-
+
+/home/kevin/development/space-invader/src/game.h
+SDL2/SDL.h
+-
 

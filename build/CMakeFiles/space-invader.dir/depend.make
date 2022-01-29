@@ -4,6 +4,7 @@
 CMakeFiles/space-invader.dir/main.cpp.o: ../src/game.h
 CMakeFiles/space-invader.dir/main.cpp.o: ../main.cpp
 
+CMakeFiles/space-invader.dir/src/game.cpp.o: ../src/definitions.h
 CMakeFiles/space-invader.dir/src/game.cpp.o: ../src/game.cpp
 CMakeFiles/space-invader.dir/src/game.cpp.o: ../src/game.h
 

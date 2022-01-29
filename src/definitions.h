@@ -1,0 +1,4 @@
+#define SCREEN_WIDTH 	1920
+#define SCREEN_HEIGHT 	1080
+#define	SCREEN_POS_Y	0
+#define SCREEN_POS_X	0

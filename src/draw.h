@@ -1,0 +1,2 @@
+void prepareScene();
+void presentScene();

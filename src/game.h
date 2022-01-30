@@ -6,6 +6,11 @@ class Game {
 		bool Running;
 		SDL_Window * window;
 		SDL_Renderer * renderer;
+
+	private:
+		void prepareScene();
+		void presentScene();
+
 	public:
 		void App();
 
@@ -13,7 +18,7 @@ class Game {
 
 	public:
 		bool OnInit();
-		void OnEvent(SDL_Event * Event);
+		void OnEvent(SDL_Event Event);
 		void OnLoop();
 		void OnRender();
 		void OnCleanUp();

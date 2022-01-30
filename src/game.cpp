@@ -17,10 +17,15 @@ int Game::OnExecute(){
     SDL_Event event;
 
 	while(Running){
+		
+		prepareScene();
 		// SDL_PollEvent checks if there is any event 
 		 while (SDL_PollEvent(&event)) {
-			OnEvent(&event);
+			OnEvent(event);
 		}
+
+		presentScene();
+
 		OnLoop();
 		OnRender();
 	}
@@ -59,12 +64,19 @@ bool Game::OnInit(){
 	return true;
 }
 
-void Game::OnEvent(SDL_Event* Event){
+void Game::OnEvent(SDL_Event event){
+	switch(event.type){
+		
+		case SDL_QUIT:
+			exit(0);
+			break;
 
+		default:
+			break;
+	}
 }
 
 void Game::OnLoop(){
-	
 }
 
 void Game::OnRender(){
@@ -73,4 +85,13 @@ void Game::OnRender(){
 
 void Game::OnCleanUp(){
 	SDL_Quit();
+}
+
+void Game::prepareScene(){
+	SDL_SetRenderDrawColor(renderer, 96, 128, 255, 255);
+	SDL_RenderClear(renderer);
+}
+
+void Game::presentScene(){
+	SDL_RenderPresent(renderer);
 }

@@ -5,6 +5,6 @@ using namespace::std;
 
 int main(){
     Game game;
-    
-    return game.OnExecute();
+    game.App();
+    return 0;
 }

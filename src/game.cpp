@@ -7,30 +7,28 @@ using namespace::std;
 
 void Game::App() {
 	Running = true;
+	OnExecute();
 }
 
 int Game::OnExecute(){
-	if(OnInit() == false){
-		return -1;
-	}
+	
+	OnInit();
 
     SDL_Event event;
 
 	while(Running){
 		
-		prepareScene();
 		// SDL_PollEvent checks if there is any event 
 		 while (SDL_PollEvent(&event)) {
 			OnEvent(event);
 		}
-
-		presentScene();
-
+		
 		OnLoop();
 		OnRender();
 	}
 
 	OnCleanUp();
+	
 	return 0;
 }
 
@@ -80,18 +78,13 @@ void Game::OnLoop(){
 }
 
 void Game::OnRender(){
-	
+	SDL_SetRenderDrawColor(renderer, 96, 128, 255, 255);
+	SDL_RenderClear(renderer);
+	SDL_RenderPresent(renderer);
+	SDL_Delay(16);
+
 }
 
 void Game::OnCleanUp(){
 	SDL_Quit();
-}
-
-void Game::prepareScene(){
-	SDL_SetRenderDrawColor(renderer, 96, 128, 255, 255);
-	SDL_RenderClear(renderer);
-}
-
-void Game::presentScene(){
-	SDL_RenderPresent(renderer);
 }

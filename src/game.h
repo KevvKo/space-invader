@@ -3,13 +3,9 @@
 class Game { 
 
 	private:
-		bool Running;
 		SDL_Window * window;
 		SDL_Renderer * renderer;
-
-	private:
-		void prepareScene();
-		void presentScene();
+		bool Running;
 
 	public:
 		void App();

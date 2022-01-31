@@ -17,8 +17,14 @@ definitions.h
 /home/kevin/development/space-invader/src/definitions.h
 SDL2/SDL.h
 -
+SDL2/SDL_image.h
+-
 
 /home/kevin/development/space-invader/src/game.h
 SDL2/SDL.h
 -
+structures.h
+/home/kevin/development/space-invader/src/structures.h
+
+/home/kevin/development/space-invader/src/structures.h
 

@@ -2,6 +2,7 @@
 #include "game.h"
 #include "definitions.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 using namespace::std;
 
@@ -15,6 +16,10 @@ int Game::OnExecute(){
 	OnInit();
 
     SDL_Event event;
+
+    player.x = 300;
+    player.y = 300;
+    player.texture = loadTexture("assets/ship1.png");
 
 	while(Running){
 		
@@ -36,6 +41,8 @@ bool Game::OnInit(){
 
 	int rendererFlags, windowFlags;
 
+	IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
+	
 	rendererFlags = SDL_RENDERER_ACCELERATED;
 	windowFlags = 0;
 
@@ -80,11 +87,31 @@ void Game::OnLoop(){
 void Game::OnRender(){
 	SDL_SetRenderDrawColor(renderer, 96, 128, 255, 255);
 	SDL_RenderClear(renderer);
+	blit(player.texture, player.x, player.y);
 	SDL_RenderPresent(renderer);
 	SDL_Delay(16);
-
 }
 
 void Game::OnCleanUp(){
 	SDL_Quit();
+}
+
+SDL_Texture * Game::loadTexture(char *filename){
+	SDL_Texture * texture;
+
+	SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Loading %s", filename);
+
+	texture = IMG_LoadTexture(renderer, filename);
+
+	return texture;
+}
+
+void Game::blit(SDL_Texture *texture, int x, int y){
+	SDL_Rect dest;
+
+	dest.x = x;
+	dest.y = y;
+
+	SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
+	SDL_RenderCopy(renderer, texture, NULL, &dest);
 }

@@ -3,8 +3,10 @@
 
 CMakeFiles/space-invader.dir/main.cpp.o
  ../src/game.h
+ ../src/structures.h
  /home/kevin/development/space-invader/main.cpp
 CMakeFiles/space-invader.dir/src/game.cpp.o
  /home/kevin/development/space-invader/src/definitions.h
  /home/kevin/development/space-invader/src/game.cpp
  /home/kevin/development/space-invader/src/game.h
+ /home/kevin/development/space-invader/src/structures.h

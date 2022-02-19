@@ -1,15 +1,17 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
   )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/kevin/development/space-invader/main.cpp" "/home/kevin/development/space-invader/build/CMakeFiles/space-invader.dir/main.cpp.o"
+  "/home/kevin/development/space-invader/src/game.cpp" "/home/kevin/development/space-invader/build/CMakeFiles/space-invader.dir/src/game.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/kevin/projects/space-invader/main.cpp" "CMakeFiles/space-invader.dir/main.cpp.o" "gcc" "CMakeFiles/space-invader.dir/main.cpp.o.d"
-  "/Users/kevin/projects/space-invader/src/game.cpp" "CMakeFiles/space-invader.dir/src/game.cpp.o" "gcc" "CMakeFiles/space-invader.dir/src/game.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../src"
   )
 
 # Targets to which this target links.

@@ -19,15 +19,15 @@ int Game::OnExecute(){
 
     player.x = 300;
     player.y = 300;
-    player.texture = loadTexture("assets/ship1.png");
-
+ 	player.texture = IMG_LoadTexture(renderer, "assets/ship1.png");
+;
 	while(Running){
 		
 		// SDL_PollEvent checks if there is any event 
 		 while (SDL_PollEvent(&event)) {
 			OnEvent(event);
 		}
-		
+
 		OnLoop();
 		OnRender();
 	}
@@ -93,6 +93,9 @@ void Game::OnRender(){
 }
 
 void Game::OnCleanUp(){
+	SDL_DestroyTexture(player.texture);
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
 
@@ -107,11 +110,9 @@ SDL_Texture * Game::loadTexture(char *filename){
 }
 
 void Game::blit(SDL_Texture *texture, int x, int y){
-	SDL_Rect dest;
 
-	dest.x = x;
-	dest.y = y;
-
-	SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
-	SDL_RenderCopy(renderer, texture, NULL, &dest);
+	//SDL_QueryTexture(texture, NULL, NULL, &dest.w, &dest.h);
+	//SDL_RenderCopy(renderer, texture, NULL, &dest);
+	SDL_RenderCopy(renderer, texture, NULL, NULL);
+	SDL_RenderPresent(renderer);
 }

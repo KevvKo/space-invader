@@ -13,6 +13,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 target_link_libraries( space-invader ${SDL2_IMAGE_LIBRARIES} )
 
+# copy all necessary assets
+file(COPY src/assets DESTINATION ${CMAKE_BINARY_DIR})
+
 # add SDL2
 find_package(SDL2 REQUIRED)
 target_link_libraries( space-invader ${SDL2_LIBRARIES})
